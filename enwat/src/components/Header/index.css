@@ -1,0 +1,11 @@
+.popup-content{
+    background-color: #2f2f2f;
+    border-color: #2f2f2f;
+}
+
+svg{
+    background-color: "#292929"
+}
+path:hover{
+    cursor: pointer;
+}
