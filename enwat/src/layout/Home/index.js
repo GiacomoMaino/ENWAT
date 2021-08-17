@@ -7,14 +7,14 @@ import {ButtonLink as Button}  from './buttons'
 
 import './style.css'
 
-import AppHeader from "../../components/Header";
+
 import WindowButton from "../../components/WindowButton";
 
 const HomeUI = () => {
 
   return (
+    <>
     <div>
-      <AppHeader />
       <Container className={"glass"}>
           <Button text="EMERGENZA FESTA" variant="outline-danger" className={Math.random() < 0.5? "btn home plain fucsia" : "btn home fucsia"} disabled={true}/>
 
@@ -30,6 +30,9 @@ const HomeUI = () => {
 
       </Container>
     </div>
+    <div className={"circle1"}></div>
+    <div className={"circle2"}></div>
+    </>
   );
 };
 

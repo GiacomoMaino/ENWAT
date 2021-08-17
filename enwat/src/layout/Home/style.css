@@ -2,5 +2,27 @@
     background: linear-gradient(to right bottom, rgba(255,255,255, 0.7), rgba(255,255,255,0.3));
     min-height: 80 vh;
     width: 60%;
-    padding: 5px
+    padding: 2rem;
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(0.5rem);
+}
+
+.circle1, .circle2{
+    background: linear-gradient(to right bottom, rgba(255,255,255, 0.8), rgba(255, 255, 255, 0.2));
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.circle1{
+    top: 10%;
+    right: 20%
+}
+
+.circle2{
+    bottom: 10%;
+    left: 25%
 }

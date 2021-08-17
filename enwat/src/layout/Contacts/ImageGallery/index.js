@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import Header from "../../../components/Header";
 import "./index.css";
 
 import CloseIcon from '@material-ui/icons/Close';
