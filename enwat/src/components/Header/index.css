@@ -9,3 +9,7 @@ svg{
 path:hover{
     cursor: pointer;
 }
+
+.header{
+    background-color: rgba(41,41,41);
+}

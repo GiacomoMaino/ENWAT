@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from "react";
-import "./App.css";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +11,7 @@ import "semantic-ui-css/semantic.min.css";
 import { GlobalProvider } from "./context/Provider";
 import UserLeaveConfirmation from "./components/UserLeaveConfirmation";
 import isAuthenticated from './utils/isAuthenticated'
+import "./App.css";
 
 const RenderRoute = (route) => {
   const history = useHistory();

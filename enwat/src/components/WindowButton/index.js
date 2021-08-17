@@ -11,9 +11,9 @@ const displayContent = (content, isPhoto) =>{
 }
 
 const WindowButton = ({
-    userDoc, content, title, color, src, isPhoto
+    userDoc, content, title, color, src, isPhoto, className
 }) => {
-    return(<div style={{backgroundColor: color}} className={"mainButton"} >
+    return(<div className={"mainButton " + className} >
         <Link to={src} >
         <div style={{color: 'black'}}>
             <h3>{title}</h3>

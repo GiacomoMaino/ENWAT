@@ -21,7 +21,8 @@ const Header = () => {
   };
 
   return (
-    <Menu secondary pointing style={{backgroundColor: "#292929"}}>
+    <div className={"header"}>
+    <Menu secondary pointing >
       <div style={{display: 'flex', justifyContent: 'center'}}>
       <Image as={Link} to='/'src={logo} width={60} />
       <Menu.Item as={Link} to="/" style={{ fontSize: 24, color:"white" }}>
@@ -49,6 +50,7 @@ const Header = () => {
         </>
       )}
     </Menu>
+    </div>
   );
 };
 
