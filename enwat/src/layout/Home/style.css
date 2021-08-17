@@ -1,7 +1,7 @@
 .glass{
     background: linear-gradient(to right bottom, rgba(255,255,255, 0.7), rgba(255,255,255,0.3));
-    min-height: 80 vh;
-    width: 60%;
+    min-height: 80vh;
+    min-width: 50vw;
     padding: 2rem;
     border-radius: 2rem;
     z-index: 2;
@@ -18,11 +18,11 @@
 }
 
 .circle1{
-    top: 10%;
-    right: 20%
+    top: 5%;
+    right: 17%
 }
 
 .circle2{
-    bottom: 10%;
-    left: 25%
+    bottom: 5%;
+    left: 20%
 }
