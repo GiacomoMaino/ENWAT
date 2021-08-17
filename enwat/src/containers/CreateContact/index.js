@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import Header from "../../components/Header";
 import ImageGallery from "../../layout/Contacts/Create";
 import {storageImageRef} from "../../helpers/firebase"
 
@@ -28,7 +27,6 @@ const ImageGalleryContainer = () => {
 
   return (
     <div>
-    <Header/>
     <ImageGallery
       photos = {imagesToDict()}
     />

@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
 
-import Header from "../../components/Header";
 import ImageGallery from "../../layout/Contacts/ImageGallery";
 
 import '../Gallery/index.css'
@@ -45,7 +44,6 @@ const MemesContainer = () =>{
 
     return(
       <div>
-    <Header/>
       <div style={{display: 'flex', justifyContent: 'center', paddingBottom:"2rem", paddingLeft:"2rem", paddingRight: "2rem"}} >
         <h1>Le nostre ore meglio spese</h1>
       </div>

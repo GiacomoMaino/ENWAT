@@ -1,5 +1,4 @@
 import React, { useRef, useState,  useEffect } from "react";
-import Header from "../../components/Header";
 import ImageGallery from "../../layout/Contacts/ImageGallery";
 import {storageImageRef} from "../../helpers/firebase"
 
@@ -49,7 +48,6 @@ const ImageGalleryContainer = () => {
 
     return(
       <div>
-    <Header/>
       <div style={{display: 'flex', justifyContent: 'center', paddingBottom:"2rem", paddingLeft:"2rem", paddingRight: "2rem"}} >
         <h1>Momenti che non dimenticheremo mai</h1>
       </div>

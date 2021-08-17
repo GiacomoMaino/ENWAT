@@ -14,12 +14,13 @@ const LoginUI = ({
   form: { onChange, form, loginFormValid, error, onSubmit, loading },
 }) => {
   return (
-    <div>
+    <div style={{display: "flex", justifyContent: 'center', alignContent: 'center'}}>
+      <div className={"glass"}>
       <div style={{display: 'flex', justifyContent: 'center'}}>
         <img src={logo} alt="E.N.W.A.T." width="30%"/>
       </div>
       <Grid centered>
-        <Grid.Column style={{ maxWidth: 550, marginTop: 20, backgroundColor: "#292929"}}>
+        <Grid.Column style={{ maxWidth: 550, marginTop: 20}}>
           <Segment >
             <Form>
               {error && <Message content={error} negative />}
@@ -61,6 +62,7 @@ const LoginUI = ({
           </Segment>
         </Grid.Column>
       </Grid>
+      </div>
     </div>
   );
 };
