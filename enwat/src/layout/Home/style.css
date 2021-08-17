@@ -2,10 +2,14 @@
     background: linear-gradient(to right bottom, rgba(255,255,255, 0.7), rgba(255,255,255,0.3));
     min-height: 80vh;
     min-width: 50vw;
-    padding: 2rem;
     border-radius: 2rem;
     z-index: 2;
     backdrop-filter: blur(0.5rem);
+    display: flex;
+}
+
+.content{
+    flex: 3;
 }
 
 .circle1, .circle2{
