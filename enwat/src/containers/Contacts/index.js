@@ -1,5 +1,5 @@
 import React from "react";
-import HomeUI from "../../layout/Contacts/List";
+import HomeUI from "../../layout/Home";
 
 const ContactsContainer = () => {
 
