@@ -19,3 +19,11 @@
 .option h2{
     padding: 0rem 2rem;
 }
+
+.option:hover{
+    cursor: pointer;
+}
+
+.icon{
+    max-width: 2vw;
+}

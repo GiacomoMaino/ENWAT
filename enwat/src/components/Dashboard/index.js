@@ -1,18 +1,14 @@
 import React, { useContext} from "react";
-import { Menu, Image, Button, Icon } from "semantic-ui-react";
-import { Link, useHistory } from "react-router-dom";
-import logo from "../../assets/images/logo_transparent.png";
+import {useHistory } from "react-router-dom";
 import logout from "../../context/actions/auth/logout";
 import { GlobalContext } from "../../context/Provider";
-import isAuthenticated from "../../utils/isAuthenticated";
-import FilterRoundedIcon from '@material-ui/icons/FilterRounded';
-import SentimentVerySatisfiedRoundedIcon from '@material-ui/icons/SentimentVerySatisfiedRounded';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import ClassRoundedIcon from '@material-ui/icons/ClassRounded';
-import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
-import AnnouncementRoundedIcon from '@material-ui/icons/AnnouncementRounded';
-import Popup from 'reactjs-popup';
-import ModifyDataLayout from '../../layout/Login/modifyPasswordAndEmail';
+import PartyIcon from "../../assets/images/icons/balloons.png"
+import AccountIcon from "../../assets/images/icons/student-card.png"
+import BottizionarioIcon from "../../assets/images/icons/book.png"
+import CitazioniIcon from "../../assets/images/icons/book-quotes.png"
+import MemeIcon from "../../assets/images/icons/panic.png"
+import RicordiIcon from "../../assets/images/icons/friendly.png"
+import LogoutIcon from "../../assets/images/icons/logout.png"
 import 'reactjs-popup/dist/index.css';
 import './index.css';
 
@@ -33,31 +29,31 @@ const Dashboard = ({userName, userAvatar}) => {
       </div>
       <div className={"menu"}>
         <div className={"option"}>
-          <img src=""/>
+          <img src={PartyIcon} className={"icon"}/>
           <h2>Emergenza Festa</h2>
         </div>
         <div className={"option"}>
-          <FilterRoundedIcon/>
+        <img src={RicordiIcon} className={"icon"}/>
           <h2>Ricordi</h2>
         </div>
         <div className={"option"}>
-          <SentimentVerySatisfiedRoundedIcon />
+        <img src={MemeIcon} className={"icon"}/>
           <h2>Meme</h2>
         </div>
         <div className={"option"}>
-          <ClassRoundedIcon/>
+          <img src={BottizionarioIcon} className={"icon"}/> 
           <h2>Bottizionario</h2>
         </div>
         <div className={"option"}>
-          <AnnouncementRoundedIcon />
+        <img src={CitazioniIcon} className={"icon"}/>
           <h2>Citazioni</h2>
         </div>
         <div className={"option"}>
-          <AccountCircleIcon/>
+          <img src={AccountIcon} className={"icon"}/>
           <h2>Account</h2>
         </div>
-        <div className={"option"}>
-          <ExitToAppRoundedIcon />
+        <div className={"option"} onClick={handleUserLogout}>
+        <img src={LogoutIcon} className={"icon"}/>
           <h2>Logout</h2>
         </div>
       </div>

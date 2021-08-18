@@ -18,6 +18,7 @@ const HomeUI = () => {
       </div>
     </div>
     <div className={"circle1"}></div>
+    <div></div>
     <div className={"circle2"}></div>
     </>
   );
