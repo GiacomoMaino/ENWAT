@@ -18,8 +18,9 @@ export default () => {
   } = useContext(GlobalContext);
 
 
-  const onChange = (e, { name, value }) => {
-    setForm({ ...form, [name]: value });
+  const onChange = (e) => {
+    console.log(e.target.name);
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
 
@@ -30,6 +31,7 @@ export default () => {
   const onSubmit = () => {
     // register(form)(authDispatch);
 
+    console.log("logging in");
     login(form)(authDispatch);
   };
 
@@ -39,11 +41,18 @@ export default () => {
 
   useEffect(() => {
     if (data) {
+      console.log(data);
       if (auth.currentUser !== null) {
         history.push("/");
       }
     }
   }, [data]);
+
+  useEffect(() => {
+    if (error) {
+      console.log(error);
+    }
+  }, [error]);
 
   return { form, onChange, loading, error, loginFormValid, onSubmit, onPasswordResetSubmit, passwordFormValid };
 };
