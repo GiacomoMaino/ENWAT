@@ -34,9 +34,6 @@ const BottizionarioContainer = () =>{
 
     return(
         <div>
-            <div style={{display: 'flex', justifyContent: 'center', paddingBottom:"2rem", paddingLeft:"2rem", paddingRight: "2rem"}} >
-                <h1>Bottizionario</h1>
-            </div>
             <LayoutBottizionario list={entries}/>
         </div>
     );

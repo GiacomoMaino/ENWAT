@@ -1,15 +1,31 @@
+
 .glass{
     background: linear-gradient(to right bottom, rgba(255,255,255, 0.7), rgba(255,255,255,0.3));
-    min-height: 80vh;
-    min-width: 50vw;
     border-radius: 2rem;
     z-index: 2;
     backdrop-filter: blur(0.5rem);
     display: flex;
+ }
+
+@media only screen and (min-width: 900px)
+{
+ .glass{
+    min-height: 80vh;
+    min-width: 50vw;
+    max-height: 90vh;
+    max-width: 80vw;
+ }
 }
+
+
 
 .content{
     flex: 3;
+    display: flex;
+    border-radius: 2rem;
+    justify-content: center;
+    align-content: center;
+    overflow-y: auto;
 }
 
 .circle1, .circle2{

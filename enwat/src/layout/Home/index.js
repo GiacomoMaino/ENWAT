@@ -8,6 +8,11 @@ import AccountComponent from "../../components/AccountComponent";
 import './style.css'
 
 import Dasboard from '../../components/Dashboard';
+import { auth } from "../../helpers/firebase";
+import ImageGalleryContainer from "../../containers/Gallery";
+import MemesContainer from "../../containers/Memes"
+import BottizionarioContainer from "../../containers/Bottizionario";
+import CitazioniContainer from "../../containers/Citazioni";
 
 const HomeUI = () => {
 
@@ -28,8 +33,11 @@ const HomeUI = () => {
         {
           {
             1: <p>Pippo</p>,
-            2: <p>Paperino</p>,
-            6: <AccountComponent username="Giacomo Maino"/>
+            2: <ImageGalleryContainer />,
+            3: <MemesContainer />,
+            4: <BottizionarioContainer />,
+            5: <CitazioniContainer />,
+            6: <AccountComponent username="Giacomo Maino" user={auth.currentUser}/>
           }[content]
         }
       </div>

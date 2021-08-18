@@ -48,9 +48,6 @@ const ImageGalleryContainer = () => {
 
     return(
       <div>
-      <div style={{display: 'flex', justifyContent: 'center', paddingBottom:"2rem", paddingLeft:"2rem", paddingRight: "2rem"}} >
-        <h1>Momenti che non dimenticheremo mai</h1>
-      </div>
       <InfiniteScroll
         dataLength={images.length}
         next={loadImages}

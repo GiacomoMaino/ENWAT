@@ -24,6 +24,17 @@
     cursor: pointer;
 }
 
-.icon{
-    max-width: 2vw;
+@media only screen and (min-width: 900px)
+{
+    .icon{
+        max-width: 2vw;
+        min-width: 2vw;
+    }
+}
+
+@media only screen and (max-width: 899px)
+{
+    .icon{
+        max-width: 10vw;
+    }
 }

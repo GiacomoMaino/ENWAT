@@ -19,6 +19,6 @@
 .main{
     font-size: 2rem;
     text-align: left;
-    color: white;
-    background-color: #292929;
+    color: black;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
 }
