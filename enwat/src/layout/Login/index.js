@@ -30,12 +30,6 @@ const LoginUI = ({
                <label>Password</label>
             </div>
             <div className={"content"}>
-              {/*
-               <div className="checkbox">
-                  <input type="checkbox" id="remember-me"/>
-                  <label for="remember-me">Remember me</label>
-               </div>
-              */} 
                <div className={"pass-link"}>
                   <Link to="/auth/pirla">Dimenticato la password?</Link>
                </div>
@@ -47,49 +41,6 @@ const LoginUI = ({
          </div>
       </div>
      </div>
-     {/* <Grid centered>
-        <Grid.Column style={{ maxWidth: 550, marginTop: 20}} >
-          <Segment >
-            <Form >
-              {error && <Message content={error} negative />}
-              <Form.Field>
-                <Form.Input
-                  value={form.username || ""}
-                  onChange={onChange}
-                  name="username"
-                  placeholder="name@provider.com"
-                  label="Email"
-                />
-              </Form.Field>
-
-              <Form.Field>
-                <Form.Input
-                  value={form.password || ""}
-                  onChange={onChange}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  label="Password"
-                />
-              </Form.Field>
-
-              <Button
-                onClick={onSubmit}
-                disabled={loginFormValid || loading}
-                fluid
-                loading={loading}
-                primary
-                type="submit"
-              >
-                Verifica la tua identità
-              </Button>
-            </Form>
-            <Link to='/auth/pirla' style={{color:'black'}}>
-              Ho dimenticato la password
-            </Link>
-          </Segment>
-        </Grid.Column>
-      </Grid>*/}
     </div>
   );
 };

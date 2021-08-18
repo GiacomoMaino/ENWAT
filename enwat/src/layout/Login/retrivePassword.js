@@ -1,50 +1,30 @@
 import React from "react";
-import {
-  Form,
-  Button,
-  Grid,
-  Segment,
-  Message,
-} from "semantic-ui-react";
 import logo from "../../assets/images/logo_transparent.png"
 
 const RetreivePasswordUI = ({
   form: { onChange, form, passwordFormValid, error, onPasswordResetSubmit, loading },
 }) => {
   return (
-    <div>
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <img src={logo} alt="E.N.W.A.T." width="30%"/>
+    <div style={{display: "flex", justifyContent: 'center', alignContent: 'center'}}>
+      <div className={"glass"} style={{display: "flex", justifyContent: 'center', alignContent: 'center', textAlign: "center"}}>
+      <div>
+        <img src={logo} style={{maxHeight: "30vh", width:"auto"}}/>
+      <div className={"wrapper"}>
+         <div className={"title"}>
+            Recupero Password
+         </div>
+         <form>
+            <div className={"field"}>
+               <input type="text" value={form.username || ""} required onChange={onChange} name="username"/>
+               <label>Indirizzo Email</label>
+            </div>
+            <div className={"field"}>
+               <input type="button" value="Recupera" onClick={onPasswordResetSubmit}/>
+            </div>
+         </form>
+         </div>
       </div>
-      <Grid centered>
-        <Grid.Column style={{ maxWidth: 550, marginTop: 20, backgroundColor: "#292929"}}>
-          <Segment >
-            <Form>
-              {error && <Message content={error} negative />}
-              <Form.Field>
-                <Form.Input
-                  value={form.username || ""}
-                  onChange={onChange}
-                  name="username"
-                  placeholder="name@provider.com"
-                  label="Email"
-                />
-              </Form.Field>
-
-              <Button
-                onClick={onPasswordResetSubmit}
-                disabled={passwordFormValid || loading}
-                fluid
-                loading={loading}
-                primary
-                type="submit"
-              >
-                Verifica la tua identità
-              </Button>
-            </Form>
-          </Segment>
-        </Grid.Column>
-      </Grid>
+     </div>
     </div>
   );
 };
