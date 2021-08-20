@@ -12,6 +12,7 @@ import { GlobalProvider } from "./context/Provider";
 import UserLeaveConfirmation from "./components/UserLeaveConfirmation";
 import isAuthenticated from './utils/isAuthenticated'
 import "./App.css";
+import "./night.css"
 
 const RenderRoute = (route) => {
   const history = useHistory();
@@ -22,21 +23,43 @@ const RenderRoute = (route) => {
     history.push("/auth/login");
   }
 
-
-  return (
+  return (<div>
     <Route
       exact
       path={route.location.pathname}
       render={(props) => <route.component {...props} />}
     ></Route>
-  );
+  </div>);
 };
 
 function App() {
   const [confirmOpen, setConfirmOpen] = useState(true);
 
+  const changeBackground = () => {
+    var hour = new Date().getHours()
+    var color = ""
+    if((0 <= hour && hour < 6) || (21 <= hour && hour <=24)){
+      color = "night"
+    }
+    else if(10 <= hour && hour < 17){
+      color = "day"
+    }
+    else if(6<= hour && hour < 10){
+      color = "sunrise"
+    }
+    else{
+      color = "sunset"
+    }
+  
+    document.body.className = color
+  
+  }
+
   return (
     <GlobalProvider>
+      {
+        changeBackground()
+      }
       <Router
         getUserConfirmation={(message, callback) => {
           return UserLeaveConfirmation(

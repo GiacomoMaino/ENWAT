@@ -1,0 +1,15 @@
+.night{
+    background: linear-gradient(to right top, #141852, #070B34);
+}
+
+.day{
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+}
+
+.sunset{
+    background: linear-gradient(to right top, #855988, #6B4984, #483475, #2B2F77, #141852, #070B34);
+}
+
+.sunrise{
+    background: linear-gradient(to left bottom,#070B34,#2B2F77, #483475, #6B4984,#855988, #F1B351, #FDE050)
+}
