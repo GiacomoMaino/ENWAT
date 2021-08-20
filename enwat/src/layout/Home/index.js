@@ -26,6 +26,7 @@ const HomeUI = () => {
       setContent(e.target.id);
   }
 
+  console.log(auth.currentUser);
 
   return (
     <>

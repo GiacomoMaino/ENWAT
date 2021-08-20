@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { auth } from '../../helpers/firebase'
 
 import {isValidEmail, isValidPassword} from "../../utils/isValid"
@@ -16,6 +16,7 @@ const AccountComponent = ({userAvatar, username, user}) => {
    const [cellphone, setCellphone] =  useState("")
    const [password, setPassword] =  useState("")
    const [mustBeRelogged, setMustBeRelogged] = useState(false)
+   const prevNeedsLogIn = useRef(false)
 
    const onEmailChange = (e) => {
       setEmail(e.target.value);
@@ -30,19 +31,22 @@ const AccountComponent = ({userAvatar, username, user}) => {
    }
 
    newForm.onSubmit = () => {
+      if(prevNeedsLogIn.value && mustBeRelogged){
+         form.onSubmit();
+      }
       setMustBeRelogged(false);
-      form.onSubmit();
+
    };
 
    const modifyInformation = (e) =>{
       if(email != auth.currentUser.email && isValidEmail(email))
-      {
-         auth.currentUser.updateEmail(email).then(()=> {
-            console.log("ciao");
-            auth.currentUser.sendEmailVerification()
-         }).catch((error)=>{
+         {
+         auth.currentUser.verifyBeforeUpdateEmail(email).then(()=> {
+            prevNeedsLogIn.current = false;
+        }).catch((error)=>{
             setMustBeRelogged(true);
-         })
+            prevNeedsLogIn.current = true
+        })
          
       }
       if(isValidPassword(password) && false)
@@ -64,7 +68,7 @@ const AccountComponent = ({userAvatar, username, user}) => {
             <LoginForm form={newForm}/>
          </div>
          ) : 
-         (<div className={"account"}>
+         (
            <div className={"account"}>
             <div className={"wrapper"}>
          <div className={"title"}>
@@ -95,7 +99,6 @@ const AccountComponent = ({userAvatar, username, user}) => {
                <input type="button" value="Modifica" onClick={modifyInformation} />
             </div>
          </form>
-         </div>
          </div>
          </div>)
       }

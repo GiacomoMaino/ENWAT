@@ -19,7 +19,7 @@ export default () => {
 
 
   const onChange = (e) => {
-    console.log(e.target.name);
+
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -31,7 +31,7 @@ export default () => {
   const onSubmit = () => {
     // register(form)(authDispatch);
 
-    console.log("logging in");
+    if(!loginFormValid)
     login(form)(authDispatch);
   };
 

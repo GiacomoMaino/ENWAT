@@ -34,7 +34,8 @@
 }
 
 .main-content{
-    max-height: 90%;
+    padding-top: 10vh;
+    max-height: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }

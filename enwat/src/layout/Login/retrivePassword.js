@@ -1,31 +1,29 @@
 import React from "react";
 import logo from "../../assets/images/logo_transparent.png"
 
+import './index.css'
+
+import {auth} from "../../helpers/firebase"
+
+import LoginForm from "../../components/LoginForm";
+import { useHistory } from "react-router-dom";
+
 const RetreivePasswordUI = ({
-  form: { onChange, form, passwordFormValid, error, onPasswordResetSubmit, loading },
-}) => {
+  form}) => {
+   const history = useHistory();
+   var newForm = form;
+   newForm.onSubmit = () => {console.log(auth.currentUser); form.onPasswordResetSubmit(); history.push("/auth/login")}
+   
+
   return (
-    <div style={{display: "flex", justifyContent: 'center', alignContent: 'center'}}>
-      <div className={"glass"} style={{display: "flex", justifyContent: 'center', alignContent: 'center', textAlign: "center"}}>
-      <div>
-        <img src={logo} style={{maxHeight: "30vh", width:"auto"}}/>
-      <div className={"wrapper"}>
-         <div className={"title"}>
-            Recupero Password
-         </div>
-         <form>
-            <div className={"field"}>
-               <input type="text" value={form.username || ""} required onChange={onChange} name="username"/>
-               <label>Indirizzo Email</label>
-            </div>
-            <div className={"field"}>
-               <input type="button" value="Recupera" onClick={onPasswordResetSubmit}/>
-            </div>
-         </form>
-         </div>
-      </div>
+   <div style={{display: "flex", alignContent:"center", justifyContent: "ceneter"}}>
+   <div className={"glass"}>
+     <div className={"login-container"}>
+       <img src={logo} style={{height: "auto", maxWidth:"50%"}}/>
+       <LoginForm form={form} emailOnly="true" title="Recupero Password" buttonText="Recupera"/>
      </div>
-    </div>
+ </div>
+ </div>
   );
 };
 
