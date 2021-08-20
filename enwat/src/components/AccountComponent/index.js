@@ -7,16 +7,22 @@ import useForm from "../../containers/Login/useForm";
 
 import './index.css'
 
-const AccountComponent = ({userAvatar, username, user}) => {
+const AccountComponent = ({userData, user, onUserDataModified: {onCellphoneChangeObserver, onUserNameChangeObserver}}) => {
    const form = useForm()
 
    const newForm = form;
 
    const [email, setEmail] =  useState(user.email)
-   const [cellphone, setCellphone] =  useState("")
+   const [cellphone, setCellphone] =  useState(userData.cellphone)
    const [password, setPassword] =  useState("")
+   const [verifyPassword, setVerifyPassword] =  useState("")
    const [mustBeRelogged, setMustBeRelogged] = useState(false)
+   const [userName, setUserName] = useState(userData.username)
    const prevNeedsLogIn = useRef(false)
+
+   const onUserNameChange = (e) => {
+      setUserName(e.target.value);
+   }
 
    const onEmailChange = (e) => {
       setEmail(e.target.value);
@@ -28,6 +34,10 @@ const AccountComponent = ({userAvatar, username, user}) => {
 
    const onPasswordChange = (e) => {
       setPassword(e.target.value);
+   }
+
+   const onVerifyPasswordChange = (e) => {
+      setVerifyPassword(e.target.value);
    }
 
    newForm.onSubmit = () => {
@@ -49,17 +59,26 @@ const AccountComponent = ({userAvatar, username, user}) => {
         })
          
       }
-      if(isValidPassword(password) && false)
+      if(isValidPassword(password) && password == verifyPassword)
       {
          auth.currentUser.updatePassword(password);
       }
-
-      if(cellphone != "")
-      {
-         auth.currentUser.updatePhoneNumber(cellphone).catch(() => {
-            console.log("telefono cambiato");
-         })
+      else{
+         if(password != verifyPassword)
+            alert("Le due password devono essere uguali")
       }
+
+      if(cellphone != "" && cellphone != userData.cellphone)
+      {
+         onCellphoneChangeObserver(cellphone);
+      }
+
+      if(userName != "" && userName != userData.username)
+      {
+         onUserNameChangeObserver(userName);
+      }
+
+      alert("Modifiche effettuate");
    }
 
     return(
@@ -72,21 +91,25 @@ const AccountComponent = ({userAvatar, username, user}) => {
            <div className={"account"}>
             <div className={"wrapper"}>
          <div className={"title"}>
-            <img src={userAvatar}/>
-            {username}
+            {/*<img src={NaN}/>*/}
+            {userData.username}
          </div>
          <form>
+         <div className={"field"}>
+               <input type="text" value={userName} required name="username" onChange={onUserNameChange}/>
+               <label>Nome utente</label>
+            </div>
             <div className={"field"}>
                <input type="text" value={email} required name="username" onChange={onEmailChange}/>
                <label>Indirizzo Email</label>
             </div>
             <div style={{display:"flex"}}>
             <div className={"field"}>
-               <input type="text" value={password} required name="username" onChange={onPasswordChange}/>
+               <input type="password" value={password} required name="username" onChange={onPasswordChange}/>
                <label>Password</label>
             </div>
             <div className={"field"}>
-               <input type="text" value={password} required name="username" onChange={onPasswordChange}/>
+               <input type="password" value={verifyPassword} required name="username" onChange={onVerifyPasswordChange}/>
                <label>Conferma Password</label>
             </div>
             </div>

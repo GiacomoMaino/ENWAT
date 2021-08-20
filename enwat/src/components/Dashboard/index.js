@@ -12,8 +12,10 @@ import LogoutIcon from "../../assets/images/icons/logout.png";
 import 'reactjs-popup/dist/index.css';
 import './index.css';
 
-const Dashboard = ({userName, userAvatar, onButtonClick}) => {
+const Dashboard = ({userData, userAvatar, onButtonClick}) => {
   const history = useHistory();
+
+  console.log(userData);
 
   const { authDispatch: dispatch } = useContext(GlobalContext);
 
@@ -25,7 +27,7 @@ const Dashboard = ({userName, userAvatar, onButtonClick}) => {
     <div className={"dashboard"}>
       <div className={"userSection"}>
         <img src={userAvatar}/>
-        <h3>{userName}</h3>
+        <h3>{userData.username}</h3>
       </div>
       <div className={"menu"}>
         <div className={"option"} onClick={onButtonClick} id="1">
