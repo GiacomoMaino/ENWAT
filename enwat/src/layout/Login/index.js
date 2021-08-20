@@ -12,13 +12,13 @@ const LoginUI = ({
 }) => {
 
   return (
-    <div style={{display: "flex", justifyContent: 'center', alignContent: 'center'}}>
-      <div className={"glass"} style={{display: "flex", justifyContent: 'center', alignContent: 'center', textAlign: "center"}}>
-      <div>
-        <img src={logo} style={{maxHeight: "30vh", width:"auto"}}/>
-         <LoginForm form={form}/>
-      </div>
-     </div>
+    <div style={{display: "flex", alignContent:"center", justifyContent: "ceneter"}}>
+      <div className={"glass"}>
+        <div className={"login-container"}>
+          <img src={logo} style={{height: "auto", maxWidth:"50%"}}/>
+          <LoginForm form={form}/>
+        </div>
+    </div>
     </div>
   );
 };
