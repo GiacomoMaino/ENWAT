@@ -15,9 +15,9 @@
     max-height: 80vh;
     max-width: 80vw;
  }
- .content{
+ .main-content{
      padding: 0 15px 0 15px;
-     max-height: 90%;
+     max-height: 100%;
  }
 }
 
@@ -32,6 +32,12 @@
 
  .card-columns{
     max-height: 90%;
+}
+
+.main-content{
+    max-height: 90%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 }
 

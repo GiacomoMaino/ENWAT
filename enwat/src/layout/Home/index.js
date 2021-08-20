@@ -38,6 +38,7 @@ const HomeUI = () => {
         { (size.width < 1100 && content > 0) && 
         (<TopMenu onClick={onDashboardButtonClicked}/>)
         }
+        <div className={"main-content"}>
         {
           {
             1: <p>Pippo</p>,
@@ -48,7 +49,7 @@ const HomeUI = () => {
             6: <AccountComponent username="Giacomo Maino" user={auth.currentUser}/>
           }[content]
         }
-        
+        </div>
       </div>
       )
     }

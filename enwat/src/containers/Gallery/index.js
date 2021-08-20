@@ -47,7 +47,7 @@ const ImageGalleryContainer = () => {
     }
 
     return(
-      <div>
+      <div style={{maxHeight: "100%"}}>
       <InfiniteScroll
         dataLength={images.length}
         next={loadImages}
