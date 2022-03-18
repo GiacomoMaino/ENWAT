@@ -15,8 +15,6 @@ import './index.css';
 const Dashboard = ({userData, userAvatar, onButtonClick}) => {
   const history = useHistory();
 
-  console.log(userData);
-
   const { authDispatch: dispatch } = useContext(GlobalContext);
 
   const handleUserLogout = () => {

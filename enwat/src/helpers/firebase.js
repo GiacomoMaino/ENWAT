@@ -1,7 +1,12 @@
 import firebase from "firebase/app";
+import "firebase/analytics";
 import "firebase/storage";
 import "firebase/auth";
 import "firebase/firestore"
+
+import { getMessaging } from "firebase/messaging";
+
+
 import {
   REACT_APP_FIREBASE_API_KEY,
   REACT_APP_AUTH_DOMAIN,
@@ -25,6 +30,7 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+//const analytics = firebase.analytics(app)
 
 const storage = firebase.storage();
 const storageImageRef = storage.ref('images');
@@ -34,5 +40,6 @@ const auth = firebase.auth();
 auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
 const firestore = firebase.firestore();
+const messaging = firebase.messaging();
 
-export { auth, storage, firebase, storageImageRef, firestore, storageMemeRef};
+export { auth, storage, firebase, storageImageRef, firestore, storageMemeRef, /*analytics,*/ messaging};

@@ -14,6 +14,7 @@ import MemesContainer from "../../containers/Memes"
 import BottizionarioContainer from "../../containers/Bottizionario";
 import CitazioniContainer from "../../containers/Citazioni";
 import TopMenu from "../../components/TopMenu";
+import PartyEmergencyComponent from "../../components/PartyEmergencyComponent";
 
 const HomeUI = () => {
 
@@ -99,7 +100,7 @@ const HomeUI = () => {
           <div className={"main-content"}>
             { 
               {
-                1: <p>Pippo</p>,
+                1: <PartyEmergencyComponent/>,
                 2: <ImageGalleryContainer />,
                 3: <MemesContainer />,
                 4: <BottizionarioContainer />,
